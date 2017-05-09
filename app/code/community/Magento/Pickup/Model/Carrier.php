@@ -48,8 +48,8 @@ class Magento_Pickup_Model_Carrier
     public function getAllowedMethods()
     {
         return array(
-            'magento_pickup'    =>  'Magento Pickup',
-            'magento_pickup_express'     =>  'Magento Pickup Express',
+            'regular'    =>  'Magento Pickup',
+            'express'     =>  'Magento Pickup Express',
         );
     }
 
@@ -65,7 +65,7 @@ class Magento_Pickup_Model_Carrier
 
         $rate->setCarrier($this->_code);
         $rate->setCarrierTitle($this->getConfigData('title'));
-        $rate->setMethod('magento_pickup');
+        $rate->setMethod('regular');
         $rate->setMethodTitle('Pick up at store (Plaza Indonesia Level 4)'); // set name here
         $rate->setPrice(0); // set shiping cost here
         $rate->setCost(0);
@@ -85,7 +85,7 @@ class Magento_Pickup_Model_Carrier
 
         $rate->setCarrier($this->_code);
         $rate->setCarrierTitle($this->getConfigData('title'));
-        $rate->setMethod('magento_pickup_express');
+        $rate->setMethod('express');
         $rate->setMethodTitle('Magento Pickup Express');
         $rate->setPrice(12.3);
         $rate->setCost(0);
