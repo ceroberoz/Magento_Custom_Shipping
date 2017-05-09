@@ -1,9 +1,9 @@
 <?php
 
-class Inchoo_Shipping_Helper_Data extends
+class Magento_Pickup_Helper_Data extends
     Mage_Core_Helper_Abstract
 {
-    const XML_EXPRESS_MAX_WEIGHT = 'carriers/inchoo_shipping/express_max_weight';
+    const XML_EXPRESS_MAX_WEIGHT = 'carriers/magento_pickup/express_max_weight';
 
     /**
      * Get max weight of single item for express shipping

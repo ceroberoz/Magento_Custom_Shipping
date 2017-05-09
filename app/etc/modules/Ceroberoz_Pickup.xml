@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Inchoo_Shipping>
+        <Magento_Pickup>
             <active>true</active>
             <codePool>community</codePool>
             <depends>
                 <Mage_Shipping />
             </depends>
-        </Inchoo_Shipping>
+        </Magento_Pickup>
     </modules>
 </config>

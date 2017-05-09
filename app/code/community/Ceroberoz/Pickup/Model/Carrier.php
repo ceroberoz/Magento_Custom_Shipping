@@ -1,6 +1,6 @@
 <?php
 
-class Inchoo_Shipping_Model_Carrier
+class Magento_Pickup_Model_Carrier
     extends Mage_Shipping_Model_Carrier_Abstract
     implements Mage_Shipping_Model_Carrier_Interface
 {
@@ -9,7 +9,7 @@ class Inchoo_Shipping_Model_Carrier
      *
      * @var string
      */
-    protected $_code = 'inchoo_shipping';
+    protected $_code = 'magento_pickup';
 
     /**
      * Returns available shipping rates for Inchoo Shipping carrier
@@ -23,7 +23,7 @@ class Inchoo_Shipping_Model_Carrier
         $result = Mage::getModel('shipping/rate_result');
 
         /** @var Inchoo_Shipping_Helper_Data $expressMaxProducts */
-        $expressMaxWeight = Mage::helper('inchoo_shipping')->getExpressMaxWeight();
+        $expressMaxWeight = Mage::helper('magento_pickup')->getExpressMaxWeight();
 
         $expressAvailable = true;
         foreach ($request->getAllItems() as $item) {
@@ -48,8 +48,8 @@ class Inchoo_Shipping_Model_Carrier
     public function getAllowedMethods()
     {
         return array(
-            'standard'    =>  'Standard delivery',
-            'express'     =>  'Express delivery',
+            'standard'    =>  'Magento Pickup Store',
+            'express'     =>  'Magento Express Delivery',
         );
     }
 
@@ -65,9 +65,9 @@ class Inchoo_Shipping_Model_Carrier
 
         $rate->setCarrier($this->_code);
         $rate->setCarrierTitle($this->getConfigData('title'));
-        $rate->setMethod('large');
-        $rate->setMethodTitle('Standard delivery');
-        $rate->setPrice(1.23);
+        $rate->setMethod('magento_pickup');
+        $rate->setMethodTitle('Magento Pickup Store'); // set name here
+        $rate->setPrice(0); // set shiping cost here
         $rate->setCost(0);
 
         return $rate;
@@ -85,8 +85,8 @@ class Inchoo_Shipping_Model_Carrier
 
         $rate->setCarrier($this->_code);
         $rate->setCarrierTitle($this->getConfigData('title'));
-        $rate->setMethod('express');
-        $rate->setMethodTitle('Express delivery');
+        $rate->setMethod('magento_pickup_express');
+        $rate->setMethodTitle('Magento Pickup Express');
         $rate->setPrice(12.3);
         $rate->setCost(0);
 

@@ -1,33 +1,33 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Inchoo_Shipping>
+        <Magento_Pickup>
             <version>0.1.0</version>
-        </Inchoo_Shipping>
+        </Magento_Pickup>
     </modules>
     <global>
         <models>
-            <inchoo_shipping>
-                <class>Inchoo_Shipping_Model</class>
-            </inchoo_shipping>
+            <magento_pickup>
+                <class>Magento_Pickup_Model</class>
+            </magento_pickup>
         </models>
         <helpers>
-            <inchoo_shipping>
-                <class>Inchoo_Shipping_Helper</class>
-            </inchoo_shipping>
+            <magento_pickup>
+                <class>Magento_Pickup_Helper</class>
+            </magento_pickup>
         </helpers>
     </global>
     <default>
         <carriers>
-            <inchoo_shipping>
+            <magento_pickup>
                 <active>1</active>
                 <sort_order>10</sort_order>
-                <model>inchoo_shipping/carrier</model>
-                <title>Inchoo Shipping Carrier</title>
+                <model>magento_pickup/carrier</model>
+                <title>Magento Pickup Store</title>
                 <sort_order>10</sort_order>
                 <sallowspecific>1</sallowspecific>
                 <express_max_weight>3</express_max_weight>
-            </inchoo_shipping>
+            </magento_pickup>
         </carriers>
     </default>
 </config>
